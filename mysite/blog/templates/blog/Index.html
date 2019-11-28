@@ -1,0 +1,251 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>OxiAnime</title>
+
+
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %}">
+  <!-- Con esto Funciona el Slide -->
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/Accordion.css' %}">
+  <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+
+</head>
+
+
+<body background="{% static 'img/DrStonePortadadefondo.jpg' %}">
+      {% block content %}
+  
+  <!-- Iconos Sociales -->
+  <div id=capa1 class="icon-bar">
+      <a href="#" class="facebook"><i class="fa fa-facebook"></i></a> 
+      <a href="#" class="twitter"><i class="fa fa-twitter"></i></a> 
+      <a href="#" class="google"><i class="fa fa-google"></i></a> 
+      <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    </div>
+    
+
+  <header class="navbar navbar-expand-md bg-dark navbar-dark">
+    <!-- Logo de La Pagina -->
+    <a class="navbar-brand" href="#">
+      <img src="" alt="logo" style="width:40px;">
+
+      <a class="navbar-brand" href="Index.html">OxiAnime</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="Registro.html" >Registro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Ingreso.html">Ingreso</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Animes.html">Anime</a>
+          </li>
+        </ul>
+      </div>
+  </header>
+  <br>
+
+  <nav>
+    <h2>Animes de Temporada</h2>
+    <div class="containerslide">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicadores -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+          <li data-target="#myCarousel" data-slide-to="6"></li>
+        </ol>
+
+        <!-- Envoltorio para Slides -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="img/DragonBall.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/FullMetalAlchemist.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/Jojos.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/KimetsunoYaiba.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/Berserk.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/DeathStrandingFOND.jpg" alt="" style="width:100%;">
+          </div>
+
+          <div class="item">
+            <img src="img/KimetsunoYaiba.jpg" alt="" style="width:100%;">
+          </div>
+        </div>
+
+        <!-- Controles de izquierda a derecha -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <br>
+  </nav>
+  <br>
+
+  
+
+  <main>
+    <section >
+            <h2>Lista de Animes:</h2>
+            <br>
+
+<div class="flex-container">
+            
+             <div class="container">
+  				<img src="{% static 'img/DrStonePortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Dr. Stone <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/DragonBallZPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Dragon Ball Z <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/NarutoPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Naruto <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/YoujoSenkiPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Youjo Senki <br></div>
+  			</div>
+			</div>
+            </div>
+            <div class="flex-container">
+            
+             <div class="container">
+  				<img src="{% static 'img/Berserk2016Portada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Berserk 2016 <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/SAOPortada2.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Sword Art Online <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/VinlandSagaPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Vinland Saga <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/Uchi-no-Ko-no-TamePortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Uchi no Ko no Tame <br></div>
+  			</div>
+			</div>
+            </div>
+            <div class="flex-container">
+            
+             <div class="container">
+  				<img src="{% static 'img/KimetsunoYaibaPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Kimetsu no Yaiba <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/OverlordPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">Overlord <br></div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/OnePunchMan2Portada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">One Punch Man Season 2 <br> </div>
+  			</div>
+			</div>
+             <div class="container">
+  				<img src="{% static 'img/hai-to-gensou-no-grimgar-levelPortada.jpg' %}" alt="Avatar" class="image">
+  					<div class="overlay">
+    			<div class="text">hai to gensou no grimgar level <br></div>
+  			</div>
+			</div>
+            </div>
+    </section>
+    <article >
+    </article>
+  </main>
+
+  <br>
+
+  <h2>Informacion:</h2>
+
+  <button class="accordion">-Informacion de La Pagina:</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  
+  <button class="accordion">-Creadores de la Pagina:</button>
+  <div class="panel">
+    <p>El creador de la pagina es ni mas ni menos que el magnifico Miguel Rojas Leiva </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  
+  <button class="accordion">-Terminos y Condiciones:</button>
+  <div class="panel">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  </div>
+  <footer>
+    <h1>Esta Pagina es una Division de Oxi-Enterprise<i class="far fa-copyright"></i></h1>
+  </footer>
+
+
+  <!-- Con esto Funciona el Slide -->
+  <script src="{%static 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js' %}"></script>
+  <script src="{%static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}"></script>
+  <!-- Con esto Funciona el Slide -->
+  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' %}"></script>
+  <!-- Con esto Funciona el Acorrdion -->
+  <script src="{%static 'js/Accordion.js' %}"></script>
+{% endblock %}
+</body>
+
+</html>
