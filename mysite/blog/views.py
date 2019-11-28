@@ -1,11 +1,22 @@
-from django.shortcuts import render
-from django.utils import timezone
 from .models import Post
+from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from .forms import PostForm
 from django.shortcuts import redirect
 
 # Create your views here.
+def Index(request):
+	return render(request, 'blog/Index.html',{})
+
+def Ingreso(request):
+    return render(request, 'blog/Ingreso.html',{})
+
+def Registro(request):
+    return render(request, 'blog/Registro.html',{})
+
+def Animes(request):
+    return render(request, 'blog/Animes.html',{})
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     return render(request, 'blog/post_list.html', {'posts': posts})
