@@ -6,8 +6,8 @@ from . import views
 
 urlpatterns = [
     path('', views.Index, name='Index'),
+    path('Registro.html', views.registro, name='Registro'),
     path('Ingreso.html', views.Ingreso, name='Ingreso'),
-    path('Registro.html', views.Registro, name='Registro'),
     path('Animes.html', views.Animes, name='Animes'),
     path('post_list', views.post_list, name='post_list'),
     path('post/<int:pk>/', views.post_detail, name='post_detail'),

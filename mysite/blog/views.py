@@ -9,10 +9,10 @@ def Index(request):
 	return render(request, 'blog/Index.html',{})
 
 def Ingreso(request):
-    return render(request, 'blog/Ingreso.html',{})
+    return render(request, 'blog/Ingreso.html',{} )
 
-def Registro(request):
-    return render(request, 'blog/Registro.html',{})
+def registro(request):
+    return render(request, 'blog/registro.html',{})
 
 def Animes(request):
     return render(request, 'blog/Animes.html',{})

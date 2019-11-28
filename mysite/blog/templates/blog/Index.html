@@ -1,6 +1,4 @@
-{% extends 'blog/base.html' %}
 {% load staticfiles %}
-
 
 <!DOCTYPE html>
 <html>
@@ -9,22 +7,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Index</title>
+  <title>OxiAnime</title>
 
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %}">
   <!-- Con esto Funciona el Slide -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="fontawesome-free-5.10.2-web/css/all.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/Accordion.css">
-  <link rel="stylesheet" href="css/socialbar.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/Accordion.css' %}">
+  <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
+  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
 
 </head>
 
 
-<body background="img/DrStonePortadadefondo.jpg">
+<body background="{% static 'img/DrStonePortadadefondo.jpg' %}">
       {% block content %}
   
   <!-- Iconos Sociales -->
@@ -132,25 +130,25 @@
 <div class="flex-container">
             
              <div class="container">
-  				<img src="img/DrStonePortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/DrStonePortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Dr. Stone <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/DragonBallZPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/DragonBallZPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Dragon Ball Z <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/NarutoPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/NarutoPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Naruto <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/YoujoSenkiPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/YoujoSenkiPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Youjo Senki <br></div>
   			</div>
@@ -159,25 +157,25 @@
             <div class="flex-container">
             
              <div class="container">
-  				<img src="img/Berserk2016Portada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/Berserk2016Portada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Berserk 2016 <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/SAOPortada2.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/SAOPortada2.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Sword Art Online <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/VinlandSagaPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/VinlandSagaPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Vinland Saga <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/Uchi-no-Ko-no-TamePortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/Uchi-no-Ko-no-TamePortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Uchi no Ko no Tame <br></div>
   			</div>
@@ -186,25 +184,25 @@
             <div class="flex-container">
             
              <div class="container">
-  				<img src="img/KimetsunoYaibaPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/KimetsunoYaibaPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Kimetsu no Yaiba <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/OverlordPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/OverlordPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">Overlord <br></div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/OnePunchMan2Portada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/OnePunchMan2Portada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">One Punch Man Season 2 <br> </div>
   			</div>
 			</div>
              <div class="container">
-  				<img src="img/hai-to-gensou-no-grimgar-levelPortada.jpg" alt="Avatar" class="image">
+  				<img src="{% static 'img/hai-to-gensou-no-grimgar-levelPortada.jpg' %}" alt="Avatar" class="image">
   					<div class="overlay">
     			<div class="text">hai to gensou no grimgar level <br></div>
   			</div>
@@ -240,11 +238,11 @@
 
 
   <!-- Con esto Funciona el Slide -->
-  <script src="{%static 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js' %}></script>
-  <script src="{%static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}></script>
+  <script src="{%static 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js' %}"></script>
+  <script src="{%static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}"></script>
   <!-- Con esto Funciona el Slide -->
   <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js' %}"></script>
-  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' %}></script>
+  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' %}"></script>
   <!-- Con esto Funciona el Acorrdion -->
   <script src="{%static 'js/Accordion.js' %}"></script>
 {% endblock %}
