@@ -8,14 +8,14 @@ from .forms import PostForm
 def Index(request):
 	return render(request, 'blog/Index.html' )
 
-def Ingreso(request):
-    return render(request, 'blog/Ingreso.html' )
-
 def Registro(request):
     return render(request, 'blog/Registro.html' )
 
+def Ingreso(request):
+    return render(request, 'blog/Ingreso' )
+
 def Animes(request):
-    return render(request, 'blog/Animes.html' )
+    return render(request, 'blog/Animes' )
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
