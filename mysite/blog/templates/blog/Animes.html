@@ -9,19 +9,18 @@
   <title>Lista-Animes</title>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %}">
   <!-- Con esto Funciona el Slide -->
   <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/Accordion.css' %}">
   <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
-  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/Filtro.css' %}">
 </head>
 
 <body background="{% static 'img/FondodePagina.jpg' %}">
-
+  {% block content %}
 
   <header class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Logo de La Pagina -->
@@ -43,6 +42,9 @@
           <li class="nav-item">
             <a class="nav-link" href="Animes.html">Anime</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="base.html">Novedades</a>
+            </li>
         </ul>
       </div>
   </header>
@@ -141,7 +143,7 @@
 
 
   <script src="js/Filtro.js"></script>
-
+  {% endblock %}
 </body>
 
 </html>
