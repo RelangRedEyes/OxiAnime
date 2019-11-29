@@ -15,7 +15,7 @@ def Ingreso(request):
     return render(request, 'blog/Ingreso' )
 
 def Animes(request):
-    return render(request, 'blog/Animes' )
+    return render(request, 'blog/Animes.html' )
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
