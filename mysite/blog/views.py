@@ -12,7 +12,7 @@ def Registro(request):
     return render(request, 'blog/Registro.html' )
 
 def Ingreso(request):
-    return render(request, 'blog/Ingreso' )
+    return render(request, 'blog/Ingreso.html' )
 
 def Animes(request):
     return render(request, 'blog/Animes.html' )
