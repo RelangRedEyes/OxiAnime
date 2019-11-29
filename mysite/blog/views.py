@@ -9,7 +9,7 @@ def Index(request):
 	return render(request, 'blog/Index.html' )
 
 def Registro(request):
-    return render(request, 'blog/Registro.html' )
+    return render(request, 'blog/Registro' )
 
 def Ingreso(request):
     return render(request, 'blog/Ingreso' )

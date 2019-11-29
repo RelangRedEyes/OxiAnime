@@ -10,15 +10,15 @@
   <title>OxiAnime</title>
 
 
-  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <!-- Con esto Funciona el Slide -->
-  <link rel="stylesheet" href="{% static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/css/all.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="{% static 'css/Accordion.css' %}">
   <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
-  <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static 'fontawesome-free-5.10.2-web/fontawesome-free-5.10.2-web/css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
 
 </head>
 
@@ -94,7 +94,7 @@
           </div>
 
           <div class="item">
-            <img src="img/Berserk.jpg" alt="" style="width:100%;">
+            <img src="{% static 'img/Berserk.jpg' %}" alt="" style="width:100%;">
           </div>
 
           <div class="item">
@@ -102,16 +102,16 @@
           </div>
 
           <div class="item">
-            <img src="{% static 'img/KimetsunoYaiba.jpg' %}" alt="" style="width:100%;">
+            <img src="img/KimetsunoYaiba.jpg'" alt="" style="width:100%;">
           </div>
         </div>
 
         <!-- Controles de izquierda a derecha -->
-        <a class="{% static 'left carousel-control' %}" href="{% static '#myCarousel' %}" data-slide="prev">
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="{% static '#myCarousel' %}" data-slide="next">
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
           <span class="glyphicon glyphicon-chevron-right"></span>
           <span class="sr-only">Next</span>
         </a>
@@ -239,13 +239,13 @@
 
 
   <!-- Con esto Funciona el Slide -->
-  <script src="{%static 'https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js' %}"></script>
-  <script src="{%static 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js' %}"></script>
+  <script src="{%static 'js/jquery-3.4.1.js' %}"></script>
   <!-- Con esto Funciona el Slide -->
-  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js' %}"></script>
-  <script src="{%static 'https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js' %}"></script>
+  <script src="{%static 'js/bootstrap.min.js' %}"></script>
   <!-- Con esto Funciona el Acorrdion -->
   <script src="{%static 'js/Accordion.js' %}"></script>
+  <script src="{%static 'js/main.js' %}"></script>
+  <script src="{%static 'js/scripts.js' %}"></script>
 {% endblock %}
 </body>
 
