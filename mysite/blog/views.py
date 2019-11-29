@@ -9,13 +9,13 @@ def Index(request):
 	return render(request, 'blog/Index.html' )
 
 def Registro(request):
-    return render(request, 'blog/Registro' )
+    return render(request, 'blog/Registro.html' )
 
 def Ingreso(request):
-    return render(request, 'blog/Ingreso' )
+    return render(request, 'blog/Ingreso.html' )
 
 def Animes(request):
-    return render(request, 'blog/Animes' )
+    return render(request, 'blog/Animes.html' )
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
