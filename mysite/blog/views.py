@@ -3,6 +3,8 @@ from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from .forms import PostForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 
 # Create your views here.
 def Index(request):
@@ -56,3 +58,17 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def Signup(request):
+    form = UserCreationForm()
+    form.fields['Email'].help_text = None
+    form.fields['Phone'].help_text = None
+    form.fields['pass1'].help_text = None
+    form.fields['pass2'].help_text = None
+    if request.method == "POST":
+        form = UserCreationForm(data=request.POST)
+        if form.is_valid():
+            user = form.save()
+            if user is not None:
+                login(request, user)
+                return redirect('/')
+    return render(request, "blog/Registro.html", {'form': form})
