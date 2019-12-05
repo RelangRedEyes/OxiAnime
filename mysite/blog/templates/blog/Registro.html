@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="{%static 'css/Validacioncontraseña.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dropout.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body background="{% static 'img/FondodePagina.jpg' %}">
     <header class="navbar navbar-expand-md bg-dark navbar-dark">
         <!-- Logo de La Pagina -->
         <a class="navbar-brand" href="#">
-            <img src="" alt="logo" style="width:40px;">
+            <img src="{% static 'img/NeroClaudius.gif'%}" alt="logo" style="width:40px;">
 
             <a class="navbar-brand" href="/">OxiAnime</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -39,6 +40,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="post_list.html">Novedades</a>
                     </li>
+                    <li>
+                            <div class="dropdown">
+                              <button class="dropbtn"><i class="fa fa-user-o" aria-hidden="true"></i></button>
+                              <div class="dropdown-content">
+                                <a href="#">Cuenta</a>
+                                <a href="#">Cerrar Sesion</a>
+                              </div>
+                            </div>
+                          </li>
                 </ul>
             </div>
     </header>
@@ -51,34 +61,40 @@
                     <h3>Registro</h3>
                 </div>
                 <div class="card-body">
-                    <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div
+                        style="display: flex-direction; justify-content: center; margin: auto; height: 300px;width: 80%;padding: 20px; ">
 
                         <form method="POST" action="{% url 'Registro' %}">
-
+                            <!-- {{ form.as_p }} -->
                             {% csrf_token %}
-                            <div class="input-container"> <i class="fa fa-key icon"></i>
-                                <div id="psw" class="infield">{{form.Email}}</div>
-                                <i id="pass_error" class="far fa-times-circle icon"></i>
+                            <div class="input-container">
+                                <p>Nombre de Usuario</p>
+                                <div id="username" class="infield">{{form.username}}</div>
                             </div>
-                            <div class="input-container"> <i class="fa fa-key icon"></i>
-                                <div id="psw" class="infield">{{form.phone}}</div>
-                                <i id="pass_error" class="far fa-times-circle icon"></i>
+
+                            <div class="input-container">
+                                <p>Contraseña</p>
+                                <div id="password1" class="infield">{{form.password1}}</div>
                             </div>
-                            <div class="input-container"> <i class="fa fa-key icon"></i>
-                                <div id="psw" class="infield">{{form.pass1}}</div>
-                                <i id="pass_error" class="far fa-times-circle icon"></i>
+
+                            <div class="input-container">
+                                <p>Repita Contraseña</p>
+                                <div id="password2" class="infield">{{form.password2}}</div>
                             </div>
-                            <div class="input-container"> <i class="fa fa-key icon"></i>
-                                <div id="psw" class="infield">{{form.pass2}}</div>
-                                <i id="pass_error" class="far fa-times-circle icon"></i>
-                            </div>
+
 
                             <button type="submit" class="btn btn-primary" id="btn_registrar">
                                 Registrate
                             </button>
+                            <input type="hidden" name="next" value="{{ next }}" />
+                        </form>
+                    </div>
 
 
-                            <!--!>
+
+
+
+                    <!--!>
                             <div class="form-group">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Correo Electrónico:</label>
@@ -114,13 +130,12 @@
 
 
 
-                        </form>
+                    </form>
 
-                    </div>
                 </div>
             </div>
         </div>
-        <?pyinclude ("demo_mysql_test.py")?>
+        </div>
     </section>
 
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

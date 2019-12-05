@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
   <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dropout.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body background="{% static 'img/FondodePagina.jpg' %}">
@@ -26,7 +28,7 @@
   <header class="navbar navbar-expand-md bg-dark navbar-dark">
       <!-- Logo de La Pagina -->
       <a class="navbar-brand" href="#">
-        <img src="" alt="logo" style="width:40px;">
+        <img src="{% static 'img/NeroClaudius.gif'%}" alt="logo" style="width:40px;">
   
         <a class="navbar-brand" href="/">OxiAnime</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -46,6 +48,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="post_list.html">Novedades</a>
             </li>
+            <li>
+                <div class="dropdown">
+                  <button class="dropbtn"><i class="fa fa-user-o" aria-hidden="true"></i></button>
+                  <div class="dropdown-content">
+                    <a href="#">Cuenta</a>
+                    <a href="#">Cerrar Sesion</a>
+                  </div>
+                </div>
+              </li>
           </ul>
         </div>
     </header>

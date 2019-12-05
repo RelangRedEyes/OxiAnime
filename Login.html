@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<title>OxiLab | Inicio de Sesion</title>
+<link href="{% static 'css/login.css' %}" rel="stylesheet" type="text/css" />
+<div class="titulos">
+    <h2 style="padding-top: 10px">Inicia Sesion</h2>
+</div>
+
+<div style="display: flex; justify-content: center; margin: auto; height: 300px;width: 80%;padding: 20px;">
+    <form method="POST" action="{% url 'Login' %}">
+        {% csrf_token %}
+        <div class="input-container"> <i class="fa fa-user icon"></i>
+            <!--<input id="user" class="input-field" type="text" placeholder="Username" name="user">-->
+            <div>{{form.username}}</div>
+            <i id="user_error" class="far fa-times-circle icon"></i>
+        </div>
+        <div class="input-container"> <i class="fa fa-key icon"></i>
+            <!--<input id="psw" class="input-field" type="password" placeholder="Password" name="psw" onBlur="ValidarUsuario()">-->
+            <div>{{form.password}}</div>
+            <i id="pass_error" class="far fa-times-circle icon"></i>
+        </div>
+        <div class="input-container">
+            <p id="WARNING">Mayusculas Activas</p>
+        </div>
+        <button class="btn" type="submit" href="{% url 'Inicio' %}">Ingresar</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+</div>
+
+<style>
+    input {
+        height: 90%;
+    }
+
+    .input-container {
+        display: -ms-flexbox;
+        /* IE10 */
+        display: flex;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+</style>
+
+
+<script src="{%static 'JS/login.js' %}"></script>
+{% endblock %}

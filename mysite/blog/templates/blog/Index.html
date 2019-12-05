@@ -17,7 +17,8 @@
   <link rel="stylesheet" href="{% static 'css/Accordion.css' %}">
   <link rel="stylesheet" href="{% static 'css/socialbar.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  <link rel="stylesheet" href="{% static 'css/dropout.css' %}">
+  <link rel="stylesheet" href="{% static 'css/font-awesome' %}">
 </head>
 
 
@@ -36,7 +37,7 @@
   <header class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Logo de La Pagina -->
     <a class="navbar-brand" href="#">
-      <img src="{% static 'img/LogoGoblinSlayer.jpg'&}" alt="logo" style="width:40px;">
+      <img src="{% static 'img/NeroClaudius.gif'%}" alt="Logoo" style="width:35px;">
 
       <a class="navbar-brand" href="">OxiAnime</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -56,6 +57,15 @@
           <li class="nav-item">
               <a class="nav-link" href="post_list.html">Novedades</a>
           </li>
+          <li>
+              <div class="dropdown">
+                <button class="dropbtn" ><i class="fa fa-user-o" aria-hidden="true"></i></button>
+                <div class="dropdown-content">
+                  <a href="#">Cuenta</a>
+                  <a href="#">Cerrar Sesion</a>
+                </div>
+              </div>
+            </li>
         </ul>
       </div>
   </header>
@@ -99,7 +109,7 @@
           </div>
 
           <div class="item">
-            <img src="{% static 'img/DeathStrandingFOND.jpg' %}" alt="" style="width:100%;">
+            <img src="{% static 'img/DrStone.jpg' %}" alt="" style="width:100%;">
           </div>
 
           <div class="item">
@@ -235,7 +245,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
   </div>
   <footer>
-    <h1>Esta Pagina es una Division de Oxi-Enterprise<i class="far fa-copyright"></i></h1>
+    <h1>Esta Pagina es una Division de Oxi-Enterprise<i class="fa fa-copyright" aria-hidden="true"></i></h1>
   </footer>
 
 

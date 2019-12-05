@@ -58,12 +58,11 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
-def Signup(request):
+def Registro(request):
     form = UserCreationForm()
-    form.fields['Email'].help_text = None
-    form.fields['Phone'].help_text = None
-    form.fields['pass1'].help_text = None
-    form.fields['pass2'].help_text = None
+    form.fields['username' ].help_text = None
+    form.fields['password1'].help_text = None
+    form.fields['password2'].help_text = None
     if request.method == "POST":
         form = UserCreationForm(data=request.POST)
         if form.is_valid():
@@ -72,3 +71,6 @@ def Signup(request):
                 login(request, user)
                 return redirect('/')
     return render(request, "blog/Registro.html", {'form': form})
+
+def Login(request):
+    return render(request, 'blog/Login.html')
