@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from .forms import PostForm
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
+from django.contrib import messages
 
 # Create your views here.
 def Index(request):
@@ -26,10 +27,6 @@ def post_list(request):
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
-
-def post_new(request):
-    		form = PostForm()
-    		return render(request, 'blog/post_edit.html', {'form': form})
 
 def post_new(request):
     if request.method == "POST":
@@ -68,9 +65,12 @@ def Registro(request):
         if form.is_valid():
             user = form.save()
             if user is not None:
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                messages.success(request, 'Registro exitoso')
                 return redirect('/')
+            else:
+                messages.warning(request, 'Ocurrio un error, Verifique la contrasena')
     return render(request, "blog/Registro.html", {'form': form})
 
-def Login(request):
-    return render(request, 'blog/Login.html')
+def profile(request):
+    return render(request, 'blog/profile.html' )

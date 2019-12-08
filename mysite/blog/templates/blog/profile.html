@@ -1,0 +1,88 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<title>OxiLab | Perfil</title>
+{% if user.is_authenticated %}
+            <div id="section2" class="titulos">
+    <h2 style="padding-top: 10px;color: aliceblue;">ID Card:</h2>
+</div>
+<div style="display: flex; flex-direction: column;">
+    <div
+        style="display: flex;flex-direction: row; justify-content: left; margin: auto; height: auto;width: 80%;padding: 20px;background-color: #1f682f;border-radius: 15px 50px 30px;">
+        <div id="contenido"
+            style="display: flex;flex-direction: column;margin-right: 10px; margin-left: 10px;color: azure;">
+            <div>
+                <p>Usuario: {{ user.get_username }}</p>
+            </div>
+            <div>
+                <p>Email: {{ user.email}}</p>
+            </div>
+            <div>
+                <p>Nombre: {{ user.first_name}} {{ user.last_name}}</p>
+            </div>
+            <br>
+        </div>
+    </div>
+
+    <div class="flex-container-pl">
+        {% for post in posts %}
+        {% if user.is_authenticated and user == post.author %}
+        <div>
+            <p id="titulo-post"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></p>
+            <p id="fecha-post"> publicado: {{ post.published_date }} | por: {{post.author}}</p>
+            <br>
+            <p class="comment">{{ post.text}}</p>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    
+</div>
+    {% else %}
+    <div style="display: flex; justify-content: center; margin: 140px; flex-direction: column;">
+            <img src="https://i.pinimg.com/originals/78/79/ca/7879caa555212c0e2466c193a4a65590.jpg" alt="No IMG">
+            <p>Creo intentaste acceder a una pagina a la cual aun no puedes acceder, intenta <a href="{% url 'Login'  %}">  Iniciando sesion</a></p>
+    </div>
+    {% endif %}
+
+<div class="vacio" style="height: 500px"></div>
+<style>
+    .flex-container-pl {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .flex-container-pl>div {
+        padding: 10px;
+        background-color: #150324;
+        width: 300px;
+        height: 300px;
+        margin: 10px;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 15px 50px 30px;
+    }
+    .flex-container-pl > div:hover {
+        background-color: #5c2c77;
+    }
+    p {
+        color: aliceblue;
+    }
+    #titulo-post a {
+        color: aliceblue;
+        font-size: 180%;
+    }
+    #titulo-post a:hover {
+        cursor: pointer;
+        /* Add a pointer on hover */
+        font-size: 180%;
+    }
+    #fecha-post {
+        font-size: 50%;
+    }
+    .contenedor_post {
+        padding: 40px;
+        margin: 15px;
+    }
+</style>
+{% endblock %}

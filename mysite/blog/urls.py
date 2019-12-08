@@ -14,10 +14,5 @@ urlpatterns = [
     path('post/<int:pk>/', views.post_detail, name='post_detail'),
     path('post/new', views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
-    path('Login/', views_auth.LoginView.as_view(template_name='blog/Login.html'), name='Login'),
-    path('Perfil/', views.Registro, name='Perfil'),
-    path('Logout/', views_auth.LogoutView.as_view(next_page='Inicio'), name='Logout'),
-    #========================================================
-    path('Login/', views_auth.LoginView.as_view(template_name='blog/Login.html'), name='Login'),
-    path('Logout/', views_auth.LogoutView.as_view(next_page='Inicio'), name='Logout'),
+    path('profile.html', views.profile, name='profile'),
 ]
