@@ -66,6 +66,14 @@
   <br>
 
   {% if user.is_authenticated %}
+  <li><a class="tooltippd" href="{% url 'Index' %}"><i class="fas fa-power-off"></i><span class="tooltiptext"
+        style="width: 130px; text-align: center;">Cerrar Sesion User: {{ user.get_username }}</span></a></li>
+  {% else %}
+  <li><a class="tooltippd" href="{% url 'Index' %}"><i class="fas fa-user-circle"></i><span class="tooltiptext"
+        style="width: 130px; text-align: center;">Iniciar Sesion</span></a></li>
+  {% endif %} </li>
+
+  {% if user.is_authenticated %}
   <style>
     #user {
       visibility: hidden;

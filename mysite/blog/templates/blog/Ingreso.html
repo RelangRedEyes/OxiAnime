@@ -72,8 +72,9 @@
           </style>
           {% endif %}
 
-    <!--    <div class="container">
-        <form action="/action_page.php">
+    <div class="container">
+        <form method="POST" action="{% url 'Index' %}">
+                {% csrf_token %}
             <div class="row">
                 <div class="vl">
                     <span class="vl-innertext">O</span>
@@ -82,19 +83,21 @@
                     <a href="#" class="fb btn">
                         <i class="fa fa-facebook fa-fw"></i> Ingresar Con Facebook
                     </a>
-                    <a href="#" class="twitter btn">
-                        <i class="fa fa-twitter fa-fw"></i> Ingresar Con Twitter
-                    </a>
-                    <a href="#" class="google btn"><i class="fa fa-google fa-fw">
-                        </i> Ingresar Con Google+
-                    </a>
                 </div>
                 <div class="col">
                     <div class="hide-md-lg">
                     </div>
-                    <input type="text" name="username" placeholder="Usuario" required>
-                    <input type="password" name="password" placeholder="Contraseña" required>
-                    <input type="submit" value="Login">
+                    <div>
+                            <input type="text" name="username" placeholder="Usuario" required>    
+                            {{form.username}}
+                    </div>
+                    <div>
+                            <input type="password" name="password" placeholder="Contraseña" required>
+                            {{form.password}}
+                    </div>
+                    
+                    <input type="submit" value="Login" href="{% url 'Ingreso' %}">
+                    <input type="hidden" name="next" value="{{ next }}" />
                 </div>
             </div>
         </form>
@@ -102,16 +105,41 @@
     
     <div class="bottom-container">
         <div class="row">
-            <div class="col">
-                <a href="#" style="color:rgb(44, 44, 44)" class="btn">Ingresar</a>
-            </div>
-            <div class="col">
-                <a href="#" style="color:rgb(44, 44, 44)" class="btn">Olvidaste tu Contraseña?</a>
-            </div>
+            
         </div>
     </div>
--->
 
+<!-- ////INTENTO NRO 2////          
+    <div class="container">
+            <form  method="POST" action="{% url 'Login' %}">
+                    {% csrf_token %}
+                    <div class="input-container">
+                     <p>Nombre de Usuario</p>   
+                    <div id="user" class="infield"><label for="">{{form.username}}</label></div>
+                    </div>
+        
+                   <div class="input-container"> 
+                        <p>Contraseña</p>  
+                    <div id="psw" class="infield">{{form.password}}</div>
+                   </div>
+  
+                
+        
+        
+                
+                   <button class="btn" style="background-color:white; color:blue" type="submit" href="{% url 'Index' %}" >Iniciar sesion</button>
+                   Si no estas registrado puedes hacerlo aqui <a href="{% url 'Registro' %}" target="blank"><strong>Registrar</strong></a>
+                   <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+    </div>
+    
+    <div class="bottom-container">
+        <div class="row">
+            
+        </div>
+    </div>
+
+<!-- ///INTENTO NRO 1///
     <section class="container">
         <div class="row pt-5">
             <div class="card">
@@ -136,12 +164,12 @@
                             </div>
 
                             <div class="input-container"> <i class="fa fa-user icon"></i>
-                                <!--<input id="user" class="input-field" type="text" placeholder="Username" name="user">-->
+                                <input id="user" class="input-field" type="text" placeholder="Username" name="user">
                                 <div>{{form.username}}</div>
                                 <i id="user_error" class="far fa-times-circle icon"></i>
                             </div>
                             <div class="input-container"> <i class="fa fa-key icon"></i>
-                                <!--<input id="psw" class="input-field" type="password" placeholder="Password" name="psw" onBlur="ValidarUsuario()">-->
+                                <input id="psw" class="input-field" type="password" placeholder="Password" name="psw" onBlur="ValidarUsuario()">
                                 <div>{{form.password}}</div>
                                 <i id="pass_error" class="far fa-times-circle icon"></i>
                             </div>
@@ -152,6 +180,7 @@
                             <input type="hidden" name="next" value="{{ next }}" />
                         </form>
                     </div>
+                -->
                     {% endblock %}
                 </div>
 </body>

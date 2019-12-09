@@ -65,13 +65,13 @@ def Registro(request):
         if form.is_valid():
             user = form.save()
             if user is not None:
-                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-                messages.success(request, 'Registro exitoso')
+                login(request, user)
                 return redirect('/')
-            else:
-                messages.warning(request, 'Ocurrio un error, Verifique la contrasena')
-    return render(request, "blog/Registro.html", {'form': form})
+    return render(request, "blog/registro.html", {'form': form})
 
 def profile(request):
     return render(request, 'blog/profile.html' )
+
+def Ingreso(request):
+    return render(request, 'blog/Ingreso.html', {}) 
     
