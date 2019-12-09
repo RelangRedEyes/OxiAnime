@@ -51,10 +51,10 @@
             <li class="nav-item">
               <a class="nav-link" href="post_list.html">Novedades</a>
             </li>
-            <li class="nav-item" id="user">
+            <li class="nav-item">
               <a class="nav-link" href="Registro.html">Registro</a>
             </li>
-            <li class="nav-item" id="user">
+            <li class="nav-item">
               <a class="nav-link" href="Ingreso.html">Ingreso</a>
             </li>
             <li class="user">
@@ -64,21 +64,21 @@
         </div>
     </header>
     <br>
-  
+
     {% if user.is_authenticated %}
-    <style>
-      #user {
-        visibility: hidden;
-      }
-    </style>
-  
-    {% elif user.is == AnonymousUser %}
-    <style>
-      .user {
-        visibility: hidden;
-      }
-    </style>
-    {% endif %}
+          <style>
+            #user {
+              visibility: hidden;
+            }
+          </style>
+        
+          {% elif user.is == AnonymousUser %}
+          <style>
+            .user {
+              visibility: hidden;
+            }
+          </style>
+          {% endif %}
 
     <div class="container">
         
@@ -90,36 +90,28 @@
                     <div
                         style="display: flex-direction; justify-content: center; margin: auto; height: 300px;width: 80%;padding: 20px; ">
 
-                        <form method="POST" action="{% url 'profile' %}">
-                            <!-- {{ form.as_p }} -->
-                            {% csrf_token %}
-                            <div class="input-container" >
-                                <p>Nombre de Usuario</p>
-                                <div id="username" class="infield">{{form.username}}</div>
-                            </div>
-
-                            <div class="input-container">
-                                <p>Contraseña</p>
-                                <div id="password1" class="infield">{{form.password1}}</div>
-                            </div>
-
-                            <div class="input-container">
-                                <p>Repita Contraseña</p>
-                                <div id="password2" class="infield">{{form.password2}}</div>
-                            </div>
-
-
-                            <button type="submit" class="btn btn-primary" id="btn_registrar">
-                                Registrate
-                            </button>
-                            <input type="hidden" name="next" value="{{ next }}" />
-                        </form>
+                        <form id="formulario" method="POST" action="{% url 'Index' %}">
+                          {% csrf_token %}
+                          <div class="input-container"><i class="fa fa-user icon icono"></i>Nombre:
+                              <div>{{form.username}}</div>
+                          </div>
+                  
+                          <div class="input-container"> <i class="fa fa-key icon icono"></i>Contraseña:
+                              <div>{{form.password1}}</div>
+                          </div>
+                  
+                          <div class="input-container"> <i class="fa fa-key icon icono"></i>Repetir-Contraseña:
+                              <div>{{form.password2}}</div>
+                          </div>
+                          <button class="btn-reg">Register</button>
+                          <input type="hidden" name="next" value="{{ next }}" />
+                          <br>
                     </div>
 
                     <br>
 
                     
-                    <a href="{% provider_login_url 'facebook' method='js_sdk' %}">Registrarse con Facebook</a>
+                    <a href="{% provider_login_url 'facebook' method='js_sdk' %}" action="{% url 'Index' %}" >Registrarse con Facebook</a>
 
                     </form>
                 </div>

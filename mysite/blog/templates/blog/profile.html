@@ -1,14 +1,17 @@
 {% extends 'blog/base.html' %}
 {% load staticfiles %}
 {% block content %}
-<title>OxiLab | Perfil</title>
+<title>Perfil</title>
 {% if user.is_authenticated %}
             <div id="section2" class="titulos">
-    <h2 style="padding-top: 10px;color: aliceblue;">ID Card:</h2>
+    <h2 style="padding-top: 10px;color: aliceblue;">Cuenta usuario:</h2>
 </div>
 <div style="display: flex; flex-direction: column;">
     <div
-        style="display: flex;flex-direction: row; justify-content: left; margin: auto; height: auto;width: 80%;padding: 20px;background-color: #1f682f;border-radius: 15px 50px 30px;">
+        style="display: flex;flex-direction: row; justify-content: left; margin: auto; height: auto;width: 80%;padding: 20px;background-color: #28792f;border-radius: 15px 50px 30px;">
+        <div id="foto">
+            
+        </div>
         <div id="contenido"
             style="display: flex;flex-direction: column;margin-right: 10px; margin-left: 10px;color: azure;">
             <div>
@@ -36,7 +39,7 @@
         {% endif %}
         {% endfor %}
     </div>
-    
+
 </div>
     {% else %}
     <div style="display: flex; justify-content: center; margin: 140px; flex-direction: column;">
@@ -63,7 +66,7 @@
         border-radius: 15px 50px 30px;
     }
     .flex-container-pl > div:hover {
-        background-color: #5c2c77;
+        background-color: #592b74;
     }
     p {
         color: aliceblue;
