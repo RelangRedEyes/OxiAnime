@@ -15,54 +15,51 @@
 </head>
 
 <body>
-  <header class="navbar navbar-expand-md bg-dark navbar-dark">
-    <!-- Logo de La Pagina -->
-    <a class="navbar-brand" href="#">
-      <img src="{% static 'img/NeroClaudius.gif'%}" alt="logo" style="width:40px;">
-
-      <a class="navbar-brand" href="/">OxiAnime</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="Animes.html">Animes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="post_list.html">Novedades</a>
-          </li>
-          <li class="nav-item" id="user">
-              <a class="nav-link" href="Registro.html">Registro</a>
-            </li>
-            <li class="nav-item" id="user">
-              <a class="nav-link" href="Ingreso.html">Ingreso</a>
-            </li>
-          <li class="user">
-            <a class="nav-link" href="profile.html">{{user}}</a>
-          </li>
-          <li class="user">
-              <a class="nav-link" href="">Cerrar Sesion</a>
-            </li>
-        </ul>
-      </div>
-  </header>
-  <br>
-
-  {% if user.is_authenticated %}
-  <style>
-    #user {
-      visibility: hidden;
-    }
-  </style>
-
-  {% elif user.is == AnonymousUser %} 
-    <style>
-      .user {
-        visibility: hidden;
-      }
-    </style>
-  {% endif %}
+    <header class="navbar navbar-expand-md bg-dark navbar-dark">
+        <!-- Logo de La Pagina -->
+        <a class="navbar-brand" href="#">
+          <img src="{% static 'img/NeroClaudius.gif'%}" alt="Logoo" style="width:35px;">
+    
+          <a class="navbar-brand" href="/">OxiAnime</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="Animes.html">Animes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="post_list.html">Novedades</a>
+              </li>
+              <li class="nav-item" id="user">
+                <a class="nav-link" href="Registro.html">Registro</a>
+              </li>
+              <li class="nav-item" id="user">
+                <a class="nav-link" href="Ingreso.html">Ingreso</a>
+              </li>
+              <li class="user">
+                <a class="nav-link" href="profile.html">{{user}}</a>
+              </li>
+            </ul>
+          </div>
+      </header>
+      <br>
+    
+      {% if user.is_authenticated %}
+      <style>
+        #user {
+          visibility: hidden;
+        }
+      </style>
+    
+      {% elif user.is == AnonymousUser %}
+      <style>
+        .user {
+          visibility: hidden;
+        }
+      </style>
+      {% endif %}
 
   <div class="page-header">
     <h1><a href="/"></a></h1>

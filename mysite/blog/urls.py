@@ -2,7 +2,8 @@ from django.conf.urls import url
 from django.urls import path
 from . import views
 from django.contrib.auth import views as views_auth
-
+from django.conf import settings
+from django.contrib.auth import logout
 
 
 urlpatterns = [
@@ -16,3 +17,5 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
     path('profile.html', views.profile, name='profile'),
 ]
+
+
